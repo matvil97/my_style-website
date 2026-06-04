@@ -89,7 +89,7 @@ export default function Home() {
       </section>
 
       <section id="collection" className="px-6 py-28">
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-[1600px]">
           <p className="font-ui mb-4 text-xs uppercase tracking-[0.4em] text-[#C8A97E]">
             Collection
           </p>
@@ -98,54 +98,54 @@ export default function Home() {
             Pièces signature
           </h2>
 
-    <div className="grid gap-10 md:grid-cols-2">
-  {products.map((product) => (
-    <ProductCard key={product.id} product={product} />
-  ))}
-    </div>
+          <div className="grid gap-10 lg:grid-cols-2">
+            {products.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
         </div>
       </section>
 
-<section id="gallery" className="px-6 py-28">
-  <div className="mx-auto max-w-7xl">
-    <p className="font-ui mb-4 text-xs uppercase tracking-[0.4em] text-[#C8A97E]">
-      Galerie
-    </p>
+      <section id="gallery" className="px-6 py-28">
+        <div className="mx-auto max-w-7xl">
+          <p className="font-ui mb-4 text-xs uppercase tracking-[0.4em] text-[#C8A97E]">
+            Galerie
+          </p>
 
-    <h2 className="font-title mb-12 text-5xl uppercase md:text-7xl">
-      Éditorial visuel
-    </h2>
+          <h2 className="font-title mb-12 text-5xl uppercase md:text-7xl">
+            Éditorial visuel
+          </h2>
 
-    <div className="grid gap-6 md:grid-cols-3">
-      <div className="relative h-[500px] overflow-hidden">
-        <Image
-          src="/collection2.jpg"
-          alt="Editorial MYSTYLE"
-          fill
-          className="object-cover transition duration-700 hover:scale-105"
-        />
-      </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            <div className="relative h-[500px] overflow-hidden">
+              <Image
+                src="/collection2.jpg"
+                alt="Editorial MYSTYLE"
+                fill
+                className="object-cover transition duration-700 hover:scale-105"
+              />
+            </div>
 
-      <div className="relative h-[600px] overflow-hidden md:mt-12">
-        <Image
-          src="/collection5.jpg"
-          alt="Editorial MYSTYLE"
-          fill
-          className="object-cover transition duration-700 hover:scale-105"
-        />
-      </div>
+            <div className="relative h-[600px] overflow-hidden md:mt-12">
+              <Image
+                src="/collection5.jpg"
+                alt="Editorial MYSTYLE"
+                fill
+                className="object-cover transition duration-700 hover:scale-105"
+              />
+            </div>
 
-      <div className="relative h-[500px] overflow-hidden">
-        <Image
-          src="/collection3.jpg"
-          alt="Editorial MYSTYLE"
-          fill
-          className="object-cover transition duration-700 hover:scale-105"
-        />
-      </div>
-    </div>
-  </div>
-</section>
+            <div className="relative h-[500px] overflow-hidden">
+              <Image
+                src="/collection3.jpg"
+                alt="Editorial MYSTYLE"
+                fill
+                className="object-cover transition duration-700 hover:scale-105"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="border-y border-white/10 px-6 py-28">
         <div className="mx-auto max-w-4xl text-center">
@@ -182,6 +182,7 @@ export default function Home() {
           <a
             href="https://www.instagram.com/mystyle_off12/"
             target="_blank"
+            rel="noopener noreferrer"
             className="font-ui mt-10 inline-block rounded-full border border-[#C8A97E] px-8 py-4 text-xs uppercase tracking-[0.35em] transition hover:bg-[#C8A97E] hover:text-black"
           >
             Instagram

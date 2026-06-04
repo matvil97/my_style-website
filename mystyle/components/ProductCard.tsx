@@ -9,8 +9,8 @@ type Product = {
   images: string[];
   colors: string[];
   stripeLinks: {
-  [key: string]: string | undefined;
-};
+    [key: string]: string | undefined;
+  };
 };
 
 export default function ProductCard({ product }: { product: Product }) {
@@ -21,12 +21,12 @@ export default function ProductCard({ product }: { product: Product }) {
 
   return (
     <div className="group overflow-hidden border border-white/15 bg-[#070707]">
-      <div className="relative h-[620px] bg-[#f5f5f5]">
+      <div className="relative flex h-[760px] items-center justify-center bg-white">
         <Image
           src={product.images[activeImage]}
           alt={`${product.name} ${activeColor}`}
           fill
-          className="object-contain p-4 transition duration-700 group-hover:scale-[1.03]"
+          className="object-contain p-0 transition duration-700 group-hover:scale-[1.015]"
         />
 
         <button
@@ -35,7 +35,7 @@ export default function ProductCard({ product }: { product: Product }) {
               prev === 0 ? product.images.length - 1 : prev - 1
             )
           }
-          className="absolute left-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/70 text-xl text-white hover:bg-[#C8A97E] hover:text-black"
+          className="absolute left-5 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/70 text-xl text-white transition hover:bg-[#C8A97E] hover:text-black"
         >
           ‹
         </button>
@@ -46,7 +46,7 @@ export default function ProductCard({ product }: { product: Product }) {
               prev === product.images.length - 1 ? 0 : prev + 1
             )
           }
-          className="absolute right-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/70 text-xl text-white hover:bg-[#C8A97E] hover:text-black"
+          className="absolute right-5 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/70 text-xl text-white transition hover:bg-[#C8A97E] hover:text-black"
         >
           ›
         </button>
@@ -66,7 +66,7 @@ export default function ProductCard({ product }: { product: Product }) {
           <span className="text-white">{activeColor}</span>
         </p>
 
-        <div className="mt-5 flex gap-2">
+        <div className="mt-5 flex flex-wrap gap-2">
           {product.colors.map((color, index) => (
             <button
               key={color}
