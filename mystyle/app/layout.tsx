@@ -1,5 +1,14 @@
+import type { Metadata } from "next";
 import { Oswald, Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
+
+export const metadata: Metadata = {
+  title: "MYSTYLE",
+  description: "Maison franco-congolaise",
+  icons: {
+    icon: "/favicon.png",
+  },
+};
 
 const oswald = Oswald({
   subsets: ["latin"],
@@ -23,7 +32,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body className={`${oswald.variable} ${cormorant.variable} ${inter.variable}`}>
+      <body
+        className={`${oswald.variable} ${cormorant.variable} ${inter.variable}`}
+      >
         {children}
       </body>
     </html>
