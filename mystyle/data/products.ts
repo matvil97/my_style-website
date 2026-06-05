@@ -4,9 +4,9 @@ export const products = [
     name: "T-shirt MYSTYLE KINAME",
     price: "49,90 € TTC",
     images: [
-      "/tshirt-noir.png",
-      "/tshirt-blanc.png",
-      "/tshirt-rose.png",
+      "/tshirt-noir-card.png",
+      "/tshirt-blanc-card.png",
+      "/tshirt-rose-card.png",
     ],
     colors: ["Noir", "Blanc", "Rose"],
     stripeLinks: {
@@ -20,8 +20,8 @@ export const products = [
     name: "Hoodie MYSTYLE KINAME",
     price: "69,90 € TTC",
     images: [
-      "/heros.jpg",
-      "/hoodie-gris.png",
+      "/hoodie-noir-card.png",
+      "/hoodie-gris-card.png",
     ],
     colors: ["Noir", "Gris"],
     stripeLinks: {

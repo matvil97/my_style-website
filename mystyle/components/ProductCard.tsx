@@ -21,13 +21,13 @@ export default function ProductCard({ product }: { product: Product }) {
 
   return (
     <div className="group overflow-hidden border border-white/15 bg-[#070707]">
-      <div className="relative flex h-[760px] items-center justify-center bg-white">
-        <Image
-          src={product.images[activeImage]}
-          alt={`${product.name} ${activeColor}`}
-          fill
-          className="object-contain p-0 transition duration-700 group-hover:scale-[1.015]"
-        />
+<div className="relative flex h-[390px] items-center justify-center bg-white sm:h-[500px] lg:h-[760px]">
+  <Image
+    src={product.images[activeImage]}
+    alt={`${product.name} ${activeColor}`}
+    fill
+    className="object-contain"
+  />
 
         <button
           onClick={() =>
