@@ -98,11 +98,11 @@ export default function Home() {
             Pièces signature
           </h2>
 
-          <div className="grid gap-10 lg:grid-cols-2">
-            {products.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
+<div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5">
+  {products.map((product) => (
+    <ProductCard key={product.id} product={product} />
+  ))}
+</div>
         </div>
       </section>
 
