@@ -7,11 +7,14 @@ type Product = {
   name: string;
   price: string;
   images: string[];
-  stripeLink: string;
+  stripeLink?: string;
+  colors?: string[];
+  stripeLinks?: Record<string, string>;
 };
 
 export default function ProductCard({ product }: { product: Product }) {
   const [activeImage, setActiveImage] = useState(0);
+  const [selectedColor, setSelectedColor] = useState(product.colors?.[0] ?? "");
 
   return (
     <div className="group overflow-hidden border border-white/10 bg-[#050505]">
@@ -83,13 +86,35 @@ export default function ProductCard({ product }: { product: Product }) {
           </div>
         )}
 
+        {product.colors && product.colors.length > 1 && (
+          <div className="mt-5 flex gap-2">
+            {product.colors.map((color) => (
+              <button
+                key={color}
+                onClick={() => setSelectedColor(color)}
+                className={`font-ui px-3 py-1 text-[10px] uppercase tracking-[0.25em] border transition ${
+                  selectedColor === color
+                    ? "border-[#C8A97E] text-[#C8A97E]"
+                    : "border-white/20 text-white/60 hover:border-white hover:text-white"
+                }`}
+              >
+                {color}
+              </button>
+            ))}
+          </div>
+        )}
+
         <div className="mt-8 flex items-center justify-between">
           <span className="font-ui text-sm tracking-[0.25em] text-white">
             {product.price}
           </span>
 
           <a
-            href={product.stripeLink}
+            href={
+              product.stripeLinks
+                ? (product.stripeLinks[selectedColor] ?? "#")
+                : (product.stripeLink ?? "#")
+            }
             target="_blank"
             rel="noopener noreferrer"
             className="font-ui text-xs uppercase tracking-[0.3em] text-[#C8A97E] transition hover:text-white"

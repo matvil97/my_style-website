@@ -1,12 +1,28 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Navbar from "../components/Navbar";
 import ProductCard from "../components/ProductCard";
 import Footer from "../components/Footer";
 import { products } from "../data/products";
 
+const FILTERS = [
+  { key: "tout", label: "Tout" },
+  { key: "vetements", label: "Vêtements" },
+  { key: "accessoires", label: "Accessoires" },
+] as const;
+
+type FilterKey = (typeof FILTERS)[number]["key"];
+
 export default function Home() {
+  const [activeFilter, setActiveFilter] = useState<FilterKey>("tout");
+
+  const visibleProducts =
+    activeFilter === "tout"
+      ? products
+      : products.filter((p) => p.category === activeFilter);
+
   return (
     <main className="bg-black text-white">
       <Navbar />
@@ -94,15 +110,31 @@ export default function Home() {
             Collection
           </p>
 
-          <h2 className="font-title mb-12 text-5xl uppercase md:text-7xl">
+          <h2 className="font-title mb-10 text-5xl uppercase md:text-7xl">
             Pièces signature
           </h2>
 
-<div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5">
-  {products.map((product) => (
-    <ProductCard key={product.id} product={product} />
-  ))}
-</div>
+          <div className="mb-10 flex gap-3">
+            {FILTERS.map((f) => (
+              <button
+                key={f.key}
+                onClick={() => setActiveFilter(f.key)}
+                className={`font-ui px-5 py-2 text-[10px] uppercase tracking-[0.35em] border transition ${
+                  activeFilter === f.key
+                    ? "border-[#C8A97E] text-[#C8A97E]"
+                    : "border-white/20 text-white/50 hover:border-white hover:text-white"
+                }`}
+              >
+                {f.label}
+              </button>
+            ))}
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5">
+            {visibleProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
         </div>
       </section>
 

@@ -3,6 +3,7 @@ export const products = [
     id: 1,
     name: "T-Shirt MYSTYLE KINAME - Noir",
     price: "49,90 € TTC",
+    category: "vetements",
     images: [
       "/tshirt-noir-face.jpeg",
       "/tshirt-noir-dos.jpeg",
@@ -15,6 +16,7 @@ export const products = [
     id: 2,
     name: "T-Shirt MYSTYLE KINAME - Blanc",
     price: "49,90 € TTC",
+    category: "vetements",
     images: [
       "/tshirt-blanc-face.jpeg",
       "/tshirt-blanc-dos.jpeg",
@@ -27,6 +29,7 @@ export const products = [
     id: 3,
     name: "T-Shirt MYSTYLE KINAME - Rose",
     price: "49,90 € TTC",
+    category: "vetements",
     images: [
       "/tshirt-rose-face.jpeg",
       "/tshirt-rose-dos.jpeg",
@@ -39,6 +42,7 @@ export const products = [
     id: 4,
     name: "Hoodie MYSTYLE KINAME - Noir",
     price: "69,90 € TTC",
+    category: "vetements",
     images: [
       "/hoodies-noir-face.jpeg",
       "/hoodies-noir-dos.jpeg",
@@ -51,6 +55,7 @@ export const products = [
     id: 5,
     name: "Hoodie MYSTYLE KINAME - Gris",
     price: "69,90 € TTC",
+    category: "vetements",
     images: [
       "/hoodie-gris-face.jpeg",
       "/hoodie-gris-dos.jpeg",
@@ -58,4 +63,21 @@ export const products = [
     stripeLink:
       "https://buy.stripe.com/aFa14p0Jg6n39eY5mf3ks00",
   },
+  {
+    id: 7,
+    name: "Chaussettes MYSTYLE",
+    price: "14,90 € TTC",
+    category: "accessoires",
+    images: [
+      "/chaussette-blanche-bleu.png",
+      "/chaussette-noir.png",
+      "/chaussette-blanche-noir.png",
+    ],
+    colors: ["Blanc et bleu", "Noir", "Blanc et noir"],
+    stripeLinks: {
+      Blanc: "LIEN_STRIPE_BLANC",
+      Noir: "LIEN_STRIPE_NOIR",
+      XXX: "LIEN_STRIPE_XXX",
+    },
+  }
 ];
