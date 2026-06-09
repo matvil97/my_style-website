@@ -48,8 +48,8 @@ export const products = [
     priceInCents: 6990,
     category: "vetements",
     images: [
-      "/hoodie_noir-face.jpeg",
-      "/hoodie_noir-dos.jpeg",
+      "/hoodie_noireface.jpeg",
+      "/hoodie_dosnoir.jpeg",
     ],
     stripeLink:
       "https://buy.stripe.com/8x2fZjbnU8vb9eY4ib3ks02",
@@ -62,8 +62,8 @@ export const products = [
     priceInCents: 6990,
     category: "vetements",
     images: [
-      "/hoodie_gris-face.jpeg",
-      "/hoodie_gris_dos.jpeg",
+      "/hoodie_facegris.jpeg",
+      "/hoodie_dosgris.jpeg",
     ],
     stripeLink:
       "https://buy.stripe.com/aFa14p0Jg6n39eY5mf3ks00",
