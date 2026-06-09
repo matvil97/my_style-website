@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Oswald, Cormorant_Garamond, Inter } from "next/font/google";
+import { CartProvider } from "../contexts/CartContext";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -35,7 +36,7 @@ export default function RootLayout({
       <body
         className={`${oswald.variable} ${cormorant.variable} ${inter.variable}`}
       >
-        {children}
+        <CartProvider>{children}</CartProvider>
       </body>
     </html>
   );

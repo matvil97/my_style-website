@@ -3,6 +3,7 @@ export const products = [
     id: 1,
     name: "T-Shirt MYSTYLE KINAME - Noir",
     price: "49,90 € TTC",
+    priceInCents: 4990,
     category: "vetements",
     images: [
       "/tshirt-noir-face.jpeg",
@@ -16,6 +17,7 @@ export const products = [
     id: 2,
     name: "T-Shirt MYSTYLE KINAME - Blanc",
     price: "49,90 € TTC",
+    priceInCents: 4990,
     category: "vetements",
     images: [
       "/tshirt-blanc-face.jpeg",
@@ -29,6 +31,7 @@ export const products = [
     id: 3,
     name: "T-Shirt MYSTYLE KINAME - Rose",
     price: "49,90 € TTC",
+    priceInCents: 4990,
     category: "vetements",
     images: [
       "/tshirt-rose-face.jpeg",
@@ -42,6 +45,7 @@ export const products = [
     id: 4,
     name: "Hoodie MYSTYLE KINAME - Noir",
     price: "69,90 € TTC",
+    priceInCents: 6990,
     category: "vetements",
     images: [
       "/hoodies-noir-face.jpeg",
@@ -55,6 +59,7 @@ export const products = [
     id: 5,
     name: "Hoodie MYSTYLE KINAME - Gris",
     price: "69,90 € TTC",
+    priceInCents: 6990,
     category: "vetements",
     images: [
       "/hoodie-gris-face.jpeg",
@@ -63,10 +68,22 @@ export const products = [
     stripeLink:
       "https://buy.stripe.com/aFa14p0Jg6n39eY5mf3ks00",
   },
+
+  {
+    id: 6,
+    name: "Casquette MYSTYLE KINAME",
+    price: "À venir",
+    priceInCents: 0,
+    category: "accessoires",
+    images: [],
+    comingSoon: true,
+  },
+
   {
     id: 7,
-    name: "Chaussettes MYSTYLE",
-    price: "14,90 € TTC",
+    name: "Socks MYSTYLE",
+    price: "2 paires chaussette à 14,99 € TTC",
+    priceInCents: 1499,
     category: "accessoires",
     images: [
       "/chaussette-blanche-bleu.png",
@@ -75,9 +92,9 @@ export const products = [
     ],
     colors: ["Blanc et bleu", "Noir", "Blanc et noir"],
     stripeLinks: {
-      Blanc: "LIEN_STRIPE_BLANC",
-      Noir: "LIEN_STRIPE_NOIR",
-      XXX: "LIEN_STRIPE_XXX",
+      "Blanc et bleu": "https://buy.stripe.com/6oUcN79fM5iZ1MwcOH3ks05",
+      Noir: "https://buy.stripe.com/9B628t4Zw26N0Is6qj3ks06",
+      "Blanc et noir": "https://buy.stripe.com/bJe14p0JgeTzgHqg0T3ks07",
     },
-  }
+  },
 ];
