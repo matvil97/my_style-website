@@ -48,8 +48,8 @@ export const products = [
     priceInCents: 6990,
     category: "vetements",
     images: [
-      "/hoodies-noir-face.jpeg",
-      "/hoodies-noir-dos.jpeg",
+      "/hoodie_noir-face.jpeg",
+      "/hoodie_noir-dos.jpeg",
     ],
     stripeLink:
       "https://buy.stripe.com/8x2fZjbnU8vb9eY4ib3ks02",
@@ -71,12 +71,26 @@ export const products = [
 
   {
     id: 6,
-    name: "Casquette MYSTYLE KINAME",
-    price: "À venir",
+    name: "Casquette MYSTYLE KINAME - Noir",
+    price: "À RENSEIGNER",
     priceInCents: 0,
     category: "accessoires",
-    images: [],
-    comingSoon: true,
+    images: [
+      "/casquette_noir.png",
+    ],
+    stripeLink: "LIEN_STRIPE_CASQUETTE_NOIR",
+  },
+
+  {
+    id: 8,
+    name: "Casquette MYSTYLE KINAME - Blanc",
+    price: "À RENSEIGNER",
+    priceInCents: 0,
+    category: "accessoires",
+    images: [
+      "/casquette_blanc.png",
+    ],
+    stripeLink: "LIEN_STRIPE_CASQUETTE_BLANC",
   },
 
   {
