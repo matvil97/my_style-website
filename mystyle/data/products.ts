@@ -62,8 +62,8 @@ export const products = [
     priceInCents: 6990,
     category: "vetements",
     images: [
-      "/hoodie-gris-face.jpeg",
-      "/hoodie-gris-dos.jpeg",
+      "/hoodie_gris-face.jpeg",
+      "/hoodie_gris_dos.jpeg",
     ],
     stripeLink:
       "https://buy.stripe.com/aFa14p0Jg6n39eY5mf3ks00",
@@ -72,31 +72,31 @@ export const products = [
   {
     id: 6,
     name: "Casquette MYSTYLE KINAME - Noir",
-    price: "À RENSEIGNER",
-    priceInCents: 0,
+    price: "29,99 € TTC",
+    priceInCents: 2999,
     category: "accessoires",
     images: [
       "/casquette_noir.png",
     ],
-    stripeLink: "LIEN_STRIPE_CASQUETTE_NOIR",
+    stripeLink: "https://buy.stripe.com/3cI6oJfEa3aRaj201V3ks09",
   },
 
   {
     id: 8,
     name: "Casquette MYSTYLE KINAME - Blanc",
-    price: "À RENSEIGNER",
-    priceInCents: 0,
+    price: "29,99 € TTC",
+    priceInCents: 2999,
     category: "accessoires",
     images: [
       "/casquette_blanc.png",
     ],
-    stripeLink: "LIEN_STRIPE_CASQUETTE_BLANC",
+    stripeLink: "https://buy.stripe.com/bJe28tfEa9zf2QAg0T3ks08",
   },
 
   {
     id: 7,
     name: "Socks MYSTYLE",
-    price: "2 paires chaussette à 14,99 € TTC",
+    price: "2 paires à 14,99 € TTC",
     priceInCents: 1499,
     category: "accessoires",
     images: [
