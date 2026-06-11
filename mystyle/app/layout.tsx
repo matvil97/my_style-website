@@ -38,4 +38,3 @@ export default function RootLayout({
     </html>
   );
 }
-// test deploy git //

@@ -78,7 +78,7 @@ export const products = [
     priceInCents: 2999,
     category: "accessoires",
     images: [
-      "/casq_noir.png",
+      "/casq_noire.png",
     ],
     stripeLink: "https://buy.stripe.com/3cI6oJfEa3aRaj201V3ks09",
   },
