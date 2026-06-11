@@ -32,7 +32,7 @@ export const products = [
   {
     id: 3,
     name: "T-Shirt MYSTYLE KINAME - Rose",
-    price: "39,99 € TTC",
+    price: "39,99 €",
     priceInCents: 3999,
     category: "vetements",
     sizes: ["S", "M", "L", "XL"],
