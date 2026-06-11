@@ -46,6 +46,20 @@ export async function POST(req: NextRequest) {
       },
       quantity: item.quantity,
     })),
+    shipping_address_collection: { allowed_countries: ["FR", "BE", "CH", "LU"] },
+    shipping_options: [
+      {
+        shipping_rate_data: {
+          type: "fixed_amount",
+          fixed_amount: { amount: 490, currency: "eur" },
+          display_name: "Livraison standard",
+          delivery_estimate: {
+            minimum: { unit: "business_day", value: 3 },
+            maximum: { unit: "business_day", value: 5 },
+          },
+        },
+      },
+    ],
     success_url: `${origin}/?commande=ok`,
     cancel_url: `${origin}/`,
   });
