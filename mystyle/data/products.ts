@@ -78,7 +78,7 @@ export const products = [
 
   {
     id: 6,
-    name: "Casquette MYSTYLE KINAME - Noir",
+    name: "Casquette MYSTYLE  - Noir",
     price: "29,99 € TTC",
     priceInCents: 2999,
     category: "accessoires",
@@ -90,7 +90,7 @@ export const products = [
 
   {
     id: 8,
-    name: "Casquette MYSTYLE KINAME - Blanc",
+    name: "Casquette MYSTYLE - Blanc",
     price: "29,99 € TTC",
     priceInCents: 2999,
     category: "accessoires",
