@@ -9,14 +9,15 @@ export type CartItem = {
   priceInCents: number;
   image: string;
   quantity: number;
+  size?: string;
   color?: string;
 };
 
 type CartContextType = {
   items: CartItem[];
   addItem: (item: Omit<CartItem, "quantity">) => void;
-  removeItem: (id: number, color?: string) => void;
-  updateQty: (id: number, qty: number, color?: string) => void;
+  removeItem: (id: number, size?: string, color?: string) => void;
+  updateQty: (id: number, qty: number, size?: string, color?: string) => void;
   clearCart: () => void;
   totalItems: number;
   totalPrice: number;
@@ -24,17 +25,21 @@ type CartContextType = {
 
 const CartContext = createContext<CartContextType | null>(null);
 
+function matches(i: CartItem, id: number, size?: string, color?: string) {
+  return i.id === id && i.size === size && i.color === color;
+}
+
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
 
   function addItem(item: Omit<CartItem, "quantity">) {
     setItems((prev) => {
-      const existing = prev.find(
-        (i) => i.id === item.id && i.color === item.color
+      const existing = prev.find((i) =>
+        matches(i, item.id, item.size, item.color)
       );
       if (existing) {
         return prev.map((i) =>
-          i.id === item.id && i.color === item.color
+          matches(i, item.id, item.size, item.color)
             ? { ...i, quantity: i.quantity + 1 }
             : i
         );
@@ -43,33 +48,23 @@ export function CartProvider({ children }: { children: ReactNode }) {
     });
   }
 
-  function removeItem(id: number, color?: string) {
-    setItems((prev) =>
-      prev.filter((i) => !(i.id === id && i.color === color))
-    );
+  function removeItem(id: number, size?: string, color?: string) {
+    setItems((prev) => prev.filter((i) => !matches(i, id, size, color)));
   }
 
-  function updateQty(id: number, qty: number, color?: string) {
-    if (qty <= 0) {
-      removeItem(id, color);
-      return;
-    }
+  function updateQty(id: number, qty: number, size?: string, color?: string) {
+    if (qty <= 0) { removeItem(id, size, color); return; }
     setItems((prev) =>
       prev.map((i) =>
-        i.id === id && i.color === color ? { ...i, quantity: qty } : i
+        matches(i, id, size, color) ? { ...i, quantity: qty } : i
       )
     );
   }
 
-  function clearCart() {
-    setItems([]);
-  }
+  function clearCart() { setItems([]); }
 
   const totalItems = items.reduce((sum, i) => sum + i.quantity, 0);
-  const totalPrice = items.reduce(
-    (sum, i) => sum + i.priceInCents * i.quantity,
-    0
-  );
+  const totalPrice = items.reduce((sum, i) => sum + i.priceInCents * i.quantity, 0);
 
   return (
     <CartContext.Provider

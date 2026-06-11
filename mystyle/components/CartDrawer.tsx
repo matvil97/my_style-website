@@ -81,7 +81,7 @@ export default function CartDrawer({
             <div className="flex-1 overflow-y-auto px-6 py-6 space-y-6">
               {items.map((item) => (
                 <div
-                  key={`${item.id}-${item.color ?? ""}`}
+                  key={`${item.id}-${item.size ?? ""}-${item.color ?? ""}`}
                   className="flex gap-4"
                 >
                   {item.image ? (
@@ -102,9 +102,9 @@ export default function CartDrawer({
                       <p className="font-ui text-[11px] uppercase tracking-[0.25em] text-white leading-snug">
                         {item.name}
                       </p>
-                      {item.color && (
+                      {(item.size || item.color) && (
                         <p className="font-ui mt-0.5 text-[10px] uppercase tracking-[0.2em] text-white/40">
-                          {item.color}
+                          {[item.size, item.color].filter(Boolean).join(" · ")}
                         </p>
                       )}
                     </div>
@@ -113,7 +113,7 @@ export default function CartDrawer({
                       <div className="flex items-center gap-2">
                         <button
                           onClick={() =>
-                            updateQty(item.id, item.quantity - 1, item.color)
+                            updateQty(item.id, item.quantity - 1, item.size, item.color)
                           }
                           className="flex h-6 w-6 items-center justify-center border border-white/20 text-white/60 hover:border-white hover:text-white transition"
                         >
@@ -124,7 +124,7 @@ export default function CartDrawer({
                         </span>
                         <button
                           onClick={() =>
-                            updateQty(item.id, item.quantity + 1, item.color)
+                            updateQty(item.id, item.quantity + 1, item.size, item.color)
                           }
                           className="flex h-6 w-6 items-center justify-center border border-white/20 text-white/60 hover:border-white hover:text-white transition"
                         >
@@ -140,7 +140,7 @@ export default function CartDrawer({
                           })}
                         </span>
                         <button
-                          onClick={() => removeItem(item.id, item.color)}
+                          onClick={() => removeItem(item.id, item.size, item.color)}
                           className="text-white/30 hover:text-white/70 transition text-xs"
                         >
                           ✕

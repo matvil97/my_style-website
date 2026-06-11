@@ -10,6 +10,7 @@ type Product = {
   price: string;
   priceInCents?: number;
   images: string[];
+  sizes?: string[];
   stripeLink?: string;
   colors?: string[];
   stripeLinks?: Record<string, string>;
@@ -20,21 +21,43 @@ type Product = {
 export default function ProductCard({ product }: { product: Product }) {
   const [activeImage, setActiveImage] = useState(0);
   const [selectedColor, setSelectedColor] = useState(product.colors?.[0] ?? "");
+  const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [added, setAdded] = useState(false);
+  const [sizeError, setSizeError] = useState(false);
   const { addItem } = useCart();
+
+  const needsSize = !!product.sizes?.length;
 
   function handleAddToCart() {
     if (!product.priceInCents || product.comingSoon || product.soldOut) return;
+    if (needsSize && !selectedSize) {
+      setSizeError(true);
+      setTimeout(() => setSizeError(false), 1500);
+      return;
+    }
     addItem({
       id: product.id,
       name: product.name,
       price: product.price,
       priceInCents: product.priceInCents,
       image: product.images[0] ?? "",
+      size: selectedSize ?? undefined,
       color: product.colors ? selectedColor : undefined,
     });
     setAdded(true);
     setTimeout(() => setAdded(false), 1500);
+  }
+
+  function handleBuy() {
+    if (needsSize && !selectedSize) {
+      setSizeError(true);
+      setTimeout(() => setSizeError(false), 1500);
+      return;
+    }
+    const href = product.stripeLinks
+      ? (product.stripeLinks[selectedColor] ?? "#")
+      : (product.stripeLink ?? "#");
+    window.open(href, "_blank", "noopener,noreferrer");
   }
 
   if (product.comingSoon) {
@@ -92,7 +115,6 @@ export default function ProductCard({ product }: { product: Product }) {
             >
               ‹
             </button>
-
             <button
               onClick={() =>
                 setActiveImage((prev) =>
@@ -157,6 +179,33 @@ export default function ProductCard({ product }: { product: Product }) {
           </div>
         )}
 
+        {product.sizes && product.sizes.length > 0 && !product.soldOut && (
+          <div className="mt-5">
+            <p className={`font-ui mb-2 text-[9px] uppercase tracking-[0.35em] transition ${
+              sizeError ? "text-red-400" : "text-white/40"
+            }`}>
+              {sizeError ? "Choisir une taille" : "Taille"}
+            </p>
+            <div className="flex gap-2 flex-wrap">
+              {product.sizes.map((size) => (
+                <button
+                  key={size}
+                  onClick={() => setSelectedSize(size)}
+                  className={`font-ui h-8 w-10 text-[10px] uppercase tracking-[0.15em] border transition ${
+                    selectedSize === size
+                      ? "border-[#C8A97E] text-[#C8A97E]"
+                      : sizeError
+                      ? "border-red-400/40 text-red-400/60 hover:border-red-400 hover:text-red-400"
+                      : "border-white/20 text-white/60 hover:border-white hover:text-white"
+                  }`}
+                >
+                  {size}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
         <div className="mt-8 flex items-center justify-between gap-3">
           <span className="font-ui text-sm tracking-[0.25em] text-white shrink-0">
             {product.price}
@@ -178,18 +227,12 @@ export default function ProductCard({ product }: { product: Product }) {
                   {added ? "Ajouté ✓" : "+ Panier"}
                 </button>
 
-                <a
-                  href={
-                    product.stripeLinks
-                      ? (product.stripeLinks[selectedColor] ?? "#")
-                      : (product.stripeLink ?? "#")
-                  }
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={handleBuy}
                   className="font-ui text-xs uppercase tracking-[0.3em] text-[#C8A97E] transition hover:text-white"
                 >
                   Acheter →
-                </a>
+                </button>
               </>
             )}
           </div>

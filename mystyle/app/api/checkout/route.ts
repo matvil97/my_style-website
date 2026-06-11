@@ -11,6 +11,7 @@ type CartItem = {
   priceInCents: number;
   image: string;
   quantity: number;
+  size?: string;
   color?: string;
 };
 
@@ -39,7 +40,7 @@ export async function POST(req: NextRequest) {
         currency: "eur",
         unit_amount: item.priceInCents,
         product_data: {
-          name: item.color ? `${item.name} — ${item.color}` : item.name,
+          name: [item.name, item.size, item.color].filter(Boolean).join(" — "),
           images: item.image ? [`${origin}${item.image}`] : [],
         },
       },
