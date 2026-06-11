@@ -2,7 +2,7 @@ export const products = [
   {
     id: 1,
     name: "T-Shirt MYSTYLE KINAME - Noir",
-    price: "39,99 € TTC",
+    price: "39,99 €",
     priceInCents: 3999,
     category: "vetements",
     sizes: ["S", "M", "L", "XL"],
@@ -17,7 +17,7 @@ export const products = [
   {
     id: 2,
     name: "T-Shirt MYSTYLE KINAME - Blanc",
-    price: "39,99 € TTC",
+    price: "39,99 €",
     priceInCents: 3999,
     category: "vetements",
     sizes: ["S", "M", "L", "XL"],
@@ -48,7 +48,7 @@ export const products = [
   {
     id: 4,
     name: "Hoodie MYSTYLE KINAME - Noir",
-    price: "59,99 € TTC",
+    price: "59,99 € ",
     priceInCents: 5999,
     category: "vetements",
     sizes: ["S", "M", "L", "XL"],
@@ -63,7 +63,7 @@ export const products = [
   {
     id: 5,
     name: "Hoodie MYSTYLE KINAME - Gris",
-    price: "59,99 € TTC",
+    price: "59,99 €",
     priceInCents: 5999,
     category: "vetements",
     sizes: ["S", "M", "L", "XL"],
@@ -79,7 +79,7 @@ export const products = [
   {
     id: 6,
     name: "Casquette MYSTYLE - Noir",
-    price: "29,99 € TTC",
+    price: "29,99 €",
     priceInCents: 2999,
     category: "accessoires",
     images: [
@@ -91,7 +91,7 @@ export const products = [
   {
     id: 8,
     name: "Casquette MYSTYLE - Blanc",
-    price: "29,99 € TTC",
+    price: "29,99 €",
     priceInCents: 2999,
     category: "accessoires",
     images: [
@@ -103,7 +103,7 @@ export const products = [
   {
     id: 7,
     name: "Socks MYSTYLE",
-    price: "2 paires à 14,99 € TTC",
+    price: "2 paires à 14,99 €",
     priceInCents: 1499,
     category: "accessoires",
     images: [
