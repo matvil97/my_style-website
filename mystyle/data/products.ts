@@ -6,8 +6,8 @@ export const products = [
     priceInCents: 4990,
     category: "vetements",
     images: [
-      "/tshirt-noir-face.jpeg",
-      "/tshirt-noir-dos.jpeg",
+      "/tshirtns1.png",
+      "/tshirtns2.png",
     ],
     stripeLink:
       "https://buy.stripe.com/7sYdRbajQ7r79eYdSL3ks03",
@@ -20,8 +20,8 @@ export const products = [
     priceInCents: 4990,
     category: "vetements",
     images: [
-      "/tshirt-blanc-face.jpeg",
-      "/tshirt-blanc-dos.jpeg",
+      "/tshirtbs1.png",
+      "/tshirtbs2.png",
     ],
     stripeLink:
       "https://buy.stripe.com/dRm9AVcrY9zf1Mw5mf3ks01",
@@ -34,8 +34,8 @@ export const products = [
     priceInCents: 4990,
     category: "vetements",
     images: [
-      "/tshirt-rose-face.jpeg",
-      "/tshirt-rose-dos.jpeg",
+      "/tshirtrs1.png",
+      "/tshirtrs2.png",
     ],
     stripeLink:
       "https://buy.stripe.com/bJedRb0Jg4eVdve4ib3ks04",
