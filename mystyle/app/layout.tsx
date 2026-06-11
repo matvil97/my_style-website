@@ -5,7 +5,19 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "MYSTYLE",
-  description: "Maison franco-congolaise",
+  description: "Maison franco-congolaise — vêtements & accessoires",
+  openGraph: {
+    title: "MYSTYLE",
+    description: "Maison franco-congolaise — vêtements & accessoires",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MYSTYLE",
+    description: "Maison franco-congolaise — vêtements & accessoires",
+    images: ["/og-image.jpg"],
+  },
 };
 
 const oswald = Oswald({
