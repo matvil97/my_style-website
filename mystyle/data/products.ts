@@ -78,7 +78,7 @@ export const products = [
 
   {
     id: 6,
-    name: "Casquette MYSTYLE  - Noir",
+    name: "Casquette MYSTYLE - Noir",
     price: "29,99 € TTC",
     priceInCents: 2999,
     category: "accessoires",
