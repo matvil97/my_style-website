@@ -39,6 +39,7 @@ export const products = [
     ],
     stripeLink:
       "https://buy.stripe.com/bJedRb0Jg4eVdve4ib3ks04",
+    soldOut: true,
   },
 
   {
@@ -48,7 +49,7 @@ export const products = [
     priceInCents: 6990,
     category: "vetements",
     images: [
-      "/hoodie_noireface.jpeg",
+      "/hoodie_noi.jpeg",
       "/hoodie_dosnoir.jpeg",
     ],
     stripeLink:
@@ -67,6 +68,7 @@ export const products = [
     ],
     stripeLink:
       "https://buy.stripe.com/aFa14p0Jg6n39eY5mf3ks00",
+    soldOut: true,
   },
 
   {
@@ -76,7 +78,7 @@ export const products = [
     priceInCents: 2999,
     category: "accessoires",
     images: [
-      "/casquette_noir.png",
+      "/casq_noir.png",
     ],
     stripeLink: "https://buy.stripe.com/3cI6oJfEa3aRaj201V3ks09",
   },

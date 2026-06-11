@@ -14,6 +14,7 @@ type Product = {
   colors?: string[];
   stripeLinks?: Record<string, string>;
   comingSoon?: boolean;
+  soldOut?: boolean;
 };
 
 export default function ProductCard({ product }: { product: Product }) {
@@ -23,7 +24,7 @@ export default function ProductCard({ product }: { product: Product }) {
   const { addItem } = useCart();
 
   function handleAddToCart() {
-    if (!product.priceInCents || product.comingSoon) return;
+    if (!product.priceInCents || product.comingSoon || product.soldOut) return;
     addItem({
       id: product.id,
       name: product.name,
@@ -62,8 +63,15 @@ export default function ProductCard({ product }: { product: Product }) {
   }
 
   return (
-    <div className="group overflow-hidden border border-white/10 bg-[#050505]">
+    <div className={`group overflow-hidden border bg-[#050505] ${product.soldOut ? "border-white/5 opacity-70" : "border-white/10"}`}>
       <div className="relative aspect-[4/5] overflow-hidden bg-black">
+        {product.soldOut && (
+          <div className="absolute inset-0 z-10 flex items-center justify-center">
+            <span className="font-ui bg-black/60 px-4 py-1.5 text-[10px] uppercase tracking-[0.4em] text-white/70 border border-white/20">
+              Épuisé
+            </span>
+          </div>
+        )}
         <Image
           src={product.images[activeImage]}
           alt={product.name}
@@ -155,29 +163,35 @@ export default function ProductCard({ product }: { product: Product }) {
           </span>
 
           <div className="flex items-center gap-4">
-            <button
-              onClick={handleAddToCart}
-              className={`font-ui text-xs uppercase tracking-[0.3em] transition ${
-                added
-                  ? "text-green-400"
-                  : "text-white/50 hover:text-white"
-              }`}
-            >
-              {added ? "Ajouté ✓" : "+ Panier"}
-            </button>
+            {product.soldOut ? (
+              <span className="font-ui text-xs uppercase tracking-[0.3em] text-white/25 cursor-not-allowed">
+                Épuisé
+              </span>
+            ) : (
+              <>
+                <button
+                  onClick={handleAddToCart}
+                  className={`font-ui text-xs uppercase tracking-[0.3em] transition ${
+                    added ? "text-green-400" : "text-white/50 hover:text-white"
+                  }`}
+                >
+                  {added ? "Ajouté ✓" : "+ Panier"}
+                </button>
 
-            <a
-              href={
-                product.stripeLinks
-                  ? (product.stripeLinks[selectedColor] ?? "#")
-                  : (product.stripeLink ?? "#")
-              }
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-ui text-xs uppercase tracking-[0.3em] text-[#C8A97E] transition hover:text-white"
-            >
-              Acheter →
-            </a>
+                <a
+                  href={
+                    product.stripeLinks
+                      ? (product.stripeLinks[selectedColor] ?? "#")
+                      : (product.stripeLink ?? "#")
+                  }
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-ui text-xs uppercase tracking-[0.3em] text-[#C8A97E] transition hover:text-white"
+                >
+                  Acheter →
+                </a>
+              </>
+            )}
           </div>
         </div>
       </div>

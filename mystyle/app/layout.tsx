@@ -6,9 +6,6 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "MYSTYLE",
   description: "Maison franco-congolaise",
-  icons: {
-    icon: "/favicon.png",
-  },
 };
 
 const oswald = Oswald({
