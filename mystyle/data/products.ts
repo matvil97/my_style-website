@@ -5,7 +5,7 @@ export const products = [
     price: "49,90 € TTC",
     priceInCents: 4990,
     category: "vetements",
-    sizes: ["XS", "S", "M", "L", "XL", "XXL"],
+    sizes: ["S", "M", "L", "XL"],
     images: [
       "/tshirtns1.png",
       "/tshirtns2.png",
@@ -20,7 +20,7 @@ export const products = [
     price: "49,90 € TTC",
     priceInCents: 4990,
     category: "vetements",
-    sizes: ["XS", "S", "M", "L", "XL", "XXL"],
+    sizes: ["S", "M", "L", "XL"],
     images: [
       "/tshirtbs1.png",
       "/tshirtbs2.png",
@@ -35,7 +35,7 @@ export const products = [
     price: "49,90 € TTC",
     priceInCents: 4990,
     category: "vetements",
-    sizes: ["XS", "S", "M", "L", "XL", "XXL"],
+    sizes: ["S", "M", "L", "XL"],
     images: [
       "/tshirtrs1.png",
       "/tshirtrs2.png",
@@ -51,7 +51,7 @@ export const products = [
     price: "69,90 € TTC",
     priceInCents: 6990,
     category: "vetements",
-    sizes: ["XS", "S", "M", "L", "XL", "XXL"],
+    sizes: ["S", "M", "L", "XL"],
     images: [
       "/hoodie_noi.jpeg",
       "/hoodie_dosnoir.jpeg",
@@ -66,7 +66,7 @@ export const products = [
     price: "69,90 € TTC",
     priceInCents: 6990,
     category: "vetements",
-    sizes: ["XS", "S", "M", "L", "XL", "XXL"],
+    sizes: ["S", "M", "L", "XL"],
     images: [
       "/hoodie_facegris.jpeg",
       "/hoodie_dosgris.jpeg",
