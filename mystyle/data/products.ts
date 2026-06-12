@@ -2,8 +2,8 @@ export const products = [
   {
     id: 1,
     name: "T-Shirt MYSTYLE KINAME - Noir",
-    price: "40 €",
-    priceInCents: 4000,
+    price: "39,99 €",
+    priceInCents: 3999,
     category: "vetements",
     sizes: ["S", "M", "L", "XL"],
     images: [
@@ -17,8 +17,8 @@ export const products = [
   {
     id: 2,
     name: "T-Shirt MYSTYLE KINAME - Blanc",
-    price: "40 €",
-    priceInCents: 4000,
+    price: "39,99 €",
+    priceInCents: 3999,
     category: "vetements",
     sizes: ["S", "M", "L", "XL"],
     images: [
@@ -32,8 +32,8 @@ export const products = [
   {
     id: 3,
     name: "T-Shirt MYSTYLE KINAME - Rose",
-    price: "40 €",
-    priceInCents: 4000,
+    price: "39,99 €",
+    priceInCents: 3999,
     category: "vetements",
     sizes: ["S", "M", "L", "XL"],
     images: [
@@ -48,8 +48,8 @@ export const products = [
   {
     id: 4,
     name: "Hoodie MYSTYLE KINAME - Noir",
-    price: "60 € ",
-    priceInCents: 6000,
+    price: "59,99 €",
+    priceInCents: 5999,
     category: "vetements",
     sizes: ["S", "M", "L", "XL"],
     images: [
@@ -63,8 +63,8 @@ export const products = [
   {
     id: 5,
     name: "Hoodie MYSTYLE KINAME - Gris",
-    price: "60 €",
-    priceInCents: 6000,
+    price: "59,99 €",
+    priceInCents: 5999,
     category: "vetements",
     sizes: ["S", "M", "L", "XL"],
     images: [
